@@ -67,6 +67,18 @@
 					/obj/item/circuitboard/computer/arcade/amputation)
 	crate_name = "crate"
 
+/datum/supply_pack/costumes_toys/dab
+	name = "Desperate Assistant Battleforce Crate"
+	desc = "We heard you needed to arm a DAB regiment - we've got you covered with these 2 sets of DAB-brand armor."
+	contraband = TRUE
+	cost = 1200
+	access = ACCESS_MAINT_TUNNELS
+	contains = list(/obj/item/clothing/head/assu_helmet,
+					/obj/item/clothing/head/assu_helmet,
+					/obj/item/clothing/suit/assu_suit,
+					/obj/item/clothing/suit/assu_suit)
+	crate_name = "dab crate"
+
 /datum/supply_pack/costumes_toys/foamforce
 	name = "Foam Force Crate"
 	desc = "Break out the big guns with eight Foam Force shotguns!"
