@@ -61,7 +61,7 @@
 	var/mob/living/carbon/C = usr
 	if(usr.stat || usr.restrained() || C.back == src)
 		return
-	
+
 	if(!usr.canUseTopic(src, BE_CLOSE))
 		usr << browse(null, "window=radio")
 		onclose(usr, "radio")
@@ -127,7 +127,7 @@
 /obj/item/electropack/ui_interact(mob/user)
 	if(!ishuman(user))
 		return
-	
+
 	user.set_machine(src)
 	var/dat = {"
 <TT>
@@ -136,6 +136,11 @@ Turned [on ? "On" : "Off"] - <A href='?src=[REF(src)];set=power'>Toggle</A><BR>
 Frequency:
 [format_frequency(src.frequency)]
 <A href='byond://?src=[REF(src)];set=freq'>Set</A><BR>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8a7e6d49a65656e408185f005bec0afb54dbedde
 Code:
 [src.code]
 <A href='byond://?src=[REF(src)];set=code'>Set</A><BR>
@@ -206,13 +211,14 @@ Code:
 	else
 		return ..()
 
-/obj/item/electropack/shockcollar/ui_interact(mob/user) //on_click calls this 
+/obj/item/electropack/shockcollar/ui_interact(mob/user) //on_click calls this
 	var/dat = {"
 <TT>
 <B>Frequency/Code</B> for shock collar:<BR>
 Frequency:
 [format_frequency(src.frequency)]
 <A href='byond://?src=[REF(src)];set=freq'>Set</A><BR>
+
 Code:
 [src.code]
 <A href='byond://?src=[REF(src)];set=code'>Set</A><BR>
