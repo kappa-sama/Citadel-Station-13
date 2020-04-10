@@ -95,8 +95,7 @@
 		SStgui.on_transfer(current, new_character)
 		if(iscarbon(current))
 			var/mob/living/carbon/C = current
-			if(C.combatmode)
-				C.toggle_combat_mode(TRUE, TRUE)
+			C.disable_intentional_combat_mode(TRUE)
 	if(!language_holder)
 		var/datum/language_holder/mob_holder = new_character.get_language_holder(shadow = FALSE)
 		language_holder = mob_holder.copy(src)
@@ -471,7 +470,6 @@
 				/datum/objective/steal,
 				/datum/objective/download,
 				/datum/objective/nuclear,
-				/datum/objective/capture,
 				/datum/objective/absorb,
 				/datum/objective/custom
 			)
