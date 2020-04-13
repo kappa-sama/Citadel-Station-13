@@ -513,7 +513,7 @@
 	if(owner && GLOB.common_report && SSticker.current_state == GAME_STATE_FINISHED)
 		SSticker.show_roundend_report(owner.client, FALSE)
 
-/datum/action/report/IsAvailable(silent = FALSE)
+/datum/action/report/IsAvailable()
 	return 1
 
 /datum/action/report/Topic(href,href_list)

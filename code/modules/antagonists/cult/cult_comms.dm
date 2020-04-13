@@ -6,7 +6,7 @@
 	buttontooltipstyle = "cult"
 	check_flags = AB_CHECK_RESTRAINED|AB_CHECK_STUN|AB_CHECK_CONSCIOUS
 
-/datum/action/innate/cult/IsAvailable(silent = FALSE)
+/datum/action/innate/cult/IsAvailable()
 	if(!iscultist(owner))
 		return FALSE
 	return ..()
@@ -51,7 +51,7 @@
 	name = "Spiritual Communion"
 	desc = "Conveys a message from the spirit realm that all cultists can hear."
 
-/datum/action/innate/cult/comm/spirit/IsAvailable(silent = FALSE)
+/datum/action/innate/cult/comm/spirit/IsAvailable()
 	if(iscultist(owner.mind.current))
 		return TRUE
 
@@ -72,7 +72,7 @@
 	name = "Assert Leadership"
 	button_icon_state = "cultvote"
 
-/datum/action/innate/cult/mastervote/IsAvailable(silent = FALSE)
+/datum/action/innate/cult/mastervote/IsAvailable()
 	var/datum/antagonist/cult/C = owner.mind.has_antag_datum(/datum/antagonist/cult,TRUE)
 	if(!C?.cult_team || C.cult_team.cult_vote_called || !ishuman(owner))
 		return FALSE
@@ -140,7 +140,7 @@
 				to_chat(B.current,"<span class='cultlarge'>[Nominee] has won the cult's support and is now their master. Follow [Nominee.p_their()] orders to the best of your ability!</span>")
 	return TRUE
 
-/datum/action/innate/cult/master/IsAvailable(silent = FALSE)
+/datum/action/innate/cult/master/IsAvailable()
 	if(!owner.mind || !owner.mind.has_antag_datum(/datum/antagonist/cult/master) || GLOB.cult_narsie)
 		return 0
 	return ..()
@@ -226,9 +226,9 @@
 	CM.attached_action = src
 	..()
 
-/datum/action/innate/cult/master/cultmark/IsAvailable(silent = FALSE)
+/datum/action/innate/cult/master/cultmark/IsAvailable()
 	if(cooldown > world.time)
-		if(!CM.active && !silent)
+		if(!CM.active)
 			to_chat(owner, "<span class='cultlarge'><b>You need to wait [DisplayTimeText(cooldown - world.time)] before you can mark another target!</b></span>")
 		return FALSE
 	return ..()
@@ -308,7 +308,7 @@
 	name = "Mark a Blood Target for the Cult"
 	desc = "Marks a target for the entire cult to track."
 
-/datum/action/innate/cult/master/cultmark/ghost/IsAvailable(silent = FALSE)
+/datum/action/innate/cult/master/cultmark/ghost/IsAvailable()
 	if(istype(owner, /mob/dead/observer) && iscultist(owner.mind.current))
 		return TRUE
 	else
@@ -322,7 +322,7 @@
 	var/cooldown = 0
 	var/base_cooldown = 600
 
-/datum/action/innate/cult/ghostmark/IsAvailable(silent = FALSE)
+/datum/action/innate/cult/ghostmark/IsAvailable()
 	if(istype(owner, /mob/dead/observer) && iscultist(owner.mind.current))
 		return TRUE
 	else
@@ -401,11 +401,11 @@
 	PM.attached_action = src
 	..()
 
-/datum/action/innate/cult/master/pulse/IsAvailable(silent = FALSE)
+/datum/action/innate/cult/master/pulse/IsAvailable()
 	if(!owner.mind || !owner.mind.has_antag_datum(/datum/antagonist/cult/master))
 		return FALSE
 	if(cooldown > world.time)
-		if(!PM.active && !silent)
+		if(!PM.active)
 			to_chat(owner, "<span class='cultlarge'><b>You need to wait [DisplayTimeText(cooldown - world.time)] before you can pulse again!</b></span>")
 		return FALSE
 	return ..()

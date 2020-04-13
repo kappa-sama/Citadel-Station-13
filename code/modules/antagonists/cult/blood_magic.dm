@@ -17,7 +17,7 @@
 		qdel(X)
 	..()
 
-/datum/action/innate/cult/blood_magic/IsAvailable(silent = FALSE)
+/datum/action/innate/cult/blood_magic/IsAvailable()
 	if(!iscultist(owner))
 		return FALSE
 	return ..()
@@ -118,7 +118,7 @@
 		hand_magic = null
 	..()
 
-/datum/action/innate/cult/blood_spell/IsAvailable(silent = FALSE)
+/datum/action/innate/cult/blood_spell/IsAvailable()
 	if(!iscultist(owner) || owner.incapacitated()  || !charges)
 		return FALSE
 	return ..()

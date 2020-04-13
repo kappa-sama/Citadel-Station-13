@@ -153,7 +153,7 @@
 	/obj/item/clothing/head/helmet/space,
 	/obj/item/clothing/shoes/magboots)) //replace this only if ratvar is up
 
-/datum/action/innate/clockwork_armaments/IsAvailable(silent = FALSE)
+/datum/action/innate/clockwork_armaments/IsAvailable()
 	if(!is_servant_of_ratvar(owner))
 		qdel(src)
 		return
