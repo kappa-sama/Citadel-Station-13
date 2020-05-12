@@ -112,6 +112,10 @@
 		REMOVE_TRAIT(owner, X, "trauma_paralysis")
 	owner.update_disabled_bodyparts()
 
+/datum/brain_trauma/severe/paralysis/fixableparaplegic
+	random_gain = FALSE
+	paralysis_type = "legs"
+
 /datum/brain_trauma/severe/paralysis/paraplegic
 	random_gain = FALSE
 	paralysis_type = "legs"
