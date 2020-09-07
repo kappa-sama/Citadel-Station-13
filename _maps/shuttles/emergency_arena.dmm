@@ -43,7 +43,7 @@
 	},
 /area/shuttle/escape/arena)
 "l" = (
-/obj/structure/closet/crate/necropolis/tendril/magic,
+/obj/structure/closet/crate/necropolis/tendril,
 /turf/open/indestructible/necropolis/air,
 /area/shuttle/escape/arena)
 "m" = (
@@ -65,16 +65,8 @@
 /obj/structure/healingfountain,
 /turf/open/indestructible/necropolis/air,
 /area/shuttle/escape/arena)
-"t" = (
-/obj/structure/closet/crate/necropolis/tendril/misc,
-/turf/open/indestructible/necropolis/air,
-/area/shuttle/escape/arena)
 "z" = (
 /obj/effect/landmark/shuttle_arena_safe,
-/turf/open/indestructible/necropolis/air,
-/area/shuttle/escape/arena)
-"H" = (
-/obj/structure/closet/crate/necropolis/tendril/weapon_armor,
 /turf/open/indestructible/necropolis/air,
 /area/shuttle/escape/arena)
 
@@ -272,16 +264,16 @@ m
 l
 j
 m
-H
+l
 j
 k
-H
+l
 j
 m
-t
+l
 j
 m
-t
+j
 j
 p
 g
@@ -532,16 +524,16 @@ m
 l
 j
 m
-H
+l
 j
 m
-H
+l
 j
 m
-t
+l
 j
 m
-t
+j
 j
 p
 g

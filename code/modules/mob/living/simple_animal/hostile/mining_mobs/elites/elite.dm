@@ -25,7 +25,6 @@
 	var/list/attack_action_types = list()
 	var/can_talk = FALSE
 	var/obj/loot_drop = null
-	var/crate_type = /obj/structure/closet/crate/necropolis/tendril
 	var/owner
 
 //Gives player-controlled variants the ability to swap attacks
@@ -183,7 +182,7 @@ While using this makes the system rely on OnFire, it still gives options for tim
 					activator = null
 
 
-/obj/structure/elite_tumor/proc/spawn_elite(var/mob/dead/observer/elitemind)
+obj/structure/elite_tumor/proc/spawn_elite(var/mob/dead/observer/elitemind)
 	var/selectedspawn = pick(potentialspawns)
 	mychild = new selectedspawn(loc)
 	visible_message("<span class='boldwarning'>[mychild] emerges from [src]!</span>")
@@ -194,7 +193,7 @@ While using this makes the system rely on OnFire, it still gives options for tim
 	icon_state = "tumor_popped"
 	INVOKE_ASYNC(src, .proc/arena_checks)
 
-/obj/structure/elite_tumor/proc/return_elite()
+obj/structure/elite_tumor/proc/return_elite()
 	mychild.forceMove(loc)
 	visible_message("<span class='boldwarning'>[mychild] emerges from [src]!</span>")
 	playsound(loc,'sound/effects/phasein.ogg', 200, 0, 50, TRUE, TRUE)
@@ -272,11 +271,11 @@ While using this makes the system rely on OnFire, it still gives options for tim
 		visible_message("<span class='boldwarning'>[mychild] suddenly reappears above [src]!</span>")
 		playsound(loc,'sound/effects/phasein.ogg', 200, 0, 50, TRUE, TRUE)
 
-/obj/structure/elite_tumor/proc/onEliteLoss()
+obj/structure/elite_tumor/proc/onEliteLoss()
 	playsound(loc,'sound/effects/tendril_destroyed.ogg', 200, 0, 50, TRUE, TRUE)
 	visible_message("<span class='boldwarning'>[src] begins to convulse violently before beginning to dissipate.</span>")
 	visible_message("<span class='boldwarning'>As [src] closes, something is forced up from down below.</span>")
-	var/obj/structure/closet/crate/necropolis/tendril/lootbox = new mychild.crate_type(loc)
+	var/obj/structure/closet/crate/necropolis/tendril/lootbox = new /obj/structure/closet/crate/necropolis/tendril(loc)
 	if(!boosted)
 		mychild = null
 		activator = null
@@ -291,7 +290,7 @@ While using this makes the system rely on OnFire, it still gives options for tim
 	activator = null
 	qdel(src)
 
-/obj/structure/elite_tumor/proc/onEliteWon()
+obj/structure/elite_tumor/proc/onEliteWon()
 	activity = TUMOR_PASSIVE
 	activator = null
 	mychild.revive(full_heal = TRUE, admin_revive = TRUE)
