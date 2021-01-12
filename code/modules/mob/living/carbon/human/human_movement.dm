@@ -100,8 +100,3 @@
 	if(dna.species.space_move(src))
 		return TRUE
 	return ..()
-
-/mob/living/carbon/human/dirt_buildup(strength)
-	if(!shoes || !(shoes.body_parts_covered & FEET))
-		return	// barefoot advantage
-	return ..()

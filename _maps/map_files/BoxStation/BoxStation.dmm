@@ -45265,7 +45265,7 @@
 /area/maintenance/aft)
 "cfq" = (
 /obj/structure/mopbucket,
-/obj/item/clothing/suit/caution,
+/obj/item/caution,
 /turf/open/floor/plating,
 /area/maintenance/aft)
 "cfr" = (

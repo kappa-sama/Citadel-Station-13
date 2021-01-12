@@ -57,6 +57,7 @@ const Toner = (props, context) => {
       title="Toner"
       buttons={
         <Button
+          disabled={!current_toner}
           onClick={() => act('remove_toner')}
           icon="eject">
           Eject

@@ -56,7 +56,7 @@
 	log_combat(user, M, "fed", reagents.log_list())
 	if(reagents.total_volume)
 		reagents.reaction(M, apply_type)
-		reagents.trans_to(M, reagents.total_volume, log = TRUE)
+		reagents.trans_to(M, reagents.total_volume)
 	qdel(src)
 	return TRUE
 
@@ -76,8 +76,7 @@
 
 	user.visible_message("<span class='warning'>[user] slips something into [target]!</span>",
 						"<span class='notice'>You dissolve [src] in [target].</span>", vision_distance = 2)
-	log_combat(user, target, "spiked", src, reagents.log_list())
-	reagents.trans_to(target, reagents.total_volume, log = TRUE)
+	reagents.trans_to(target, reagents.total_volume)
 	qdel(src)
 	return STOP_ATTACK_PROC_CHAIN
 

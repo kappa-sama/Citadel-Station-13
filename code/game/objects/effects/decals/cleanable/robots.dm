@@ -11,7 +11,6 @@
 	bloodiness = BLOOD_AMOUNT_PER_DECAL
 	mergeable_decal = FALSE
 	beauty = -50
-	persistent = TRUE
 
 /obj/effect/decal/cleanable/robot_debris/Initialize(mapload, list/datum/disease/diseases)
 	. = ..()
@@ -53,7 +52,6 @@
 	blood_state = BLOOD_STATE_OIL
 	bloodiness = BLOOD_AMOUNT_PER_DECAL
 	beauty = -100
-	persistent = TRUE
 
 /obj/effect/decal/cleanable/oil/Initialize()
 	. = ..()
@@ -63,10 +61,8 @@
 /obj/effect/decal/cleanable/oil/streak
 	random_icon_states = list("streak1", "streak2", "streak3", "streak4", "streak5")
 	beauty = -50
-	persistent = TRUE
 
 /obj/effect/decal/cleanable/oil/slippery
-	persistent = FALSE
 
 /obj/effect/decal/cleanable/oil/slippery/Initialize()
 	AddComponent(/datum/component/slippery, 80, (NO_SLIP_WHEN_WALKING | SLIDE))

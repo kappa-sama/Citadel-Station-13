@@ -179,10 +179,6 @@
 			if((pack.hidden && !(obj_flags & EMAGGED)) || (pack.contraband && !contraband) || pack.DropPodOnly)
 				return
 
-			if(self_paid && !pack.can_private_buy)
-				say("This cannot be bought privately.")
-				return
-
 			var/name = "*None Provided*"
 			var/rank = "*None Provided*"
 			var/ckey = usr.ckey
